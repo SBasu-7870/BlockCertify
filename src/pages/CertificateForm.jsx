@@ -1,4 +1,5 @@
 import React,{useState} from 'react'
+import Certificate from '../components/Certificate';
 
 function CertificateForm() {
     const [firstName,setFirstName] = useState("");
@@ -9,9 +10,12 @@ function CertificateForm() {
     const [expiryDate,setExpiryDare] = useState(null);
     const [email,setEmail] = useState("");
 
+    const hash = "nedcnocjaojcncncncn";
+
     return (
         <>
-            <div className='flex flex-wrap -mx-3 mb-6'>
+        <div className='flex flex-row'>
+            <div className='flex flex-wrap items-center w-1/3 mt-5'>
                 <div className='="w-full md:w-1/2 px-6 mb-6 md:mb-0'>
                     <label className='block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2' for="firstname">
                         First Name
@@ -24,13 +28,11 @@ function CertificateForm() {
                     </label>
                     <input className='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-slate-50 focus:border-blue-800' id="lastname" type="text" placeholder='Doe' value={lastName} onChange={(e)=> setLastName(e.target.value)}/>
                 </div>
-            </div>
-            <div class="flex flex-wrap -mx-3 mb-6">
                 <div class="w-full md:w-1/2 px-6 mb-6 md:mb-0">
                     <label className='block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2' for="lastname">
                         Organization
                     </label>
-                    <input className='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-slate-50 focus:border-blue-800' id="organisation" type="text" placeholder='FOSS Asia' value={org} onChange={(e)=> setOrg(e.target.value)}/>
+                    <input className='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-slate-50 focus:border-blue-800' id="organisation" type="text" placeholder='IEM' value={org} onChange={(e)=> setOrg(e.target.value)}/>
                 </div>
                 <div class="w-full md:w-1/2 px-3">
                 <label className='block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2' for="lastname">
@@ -38,8 +40,6 @@ function CertificateForm() {
                     </label>
                     <input className='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-slate-50 focus:border-blue-800' id="certify" type="text" placeholder='' value={issuefor} onChange={(e)=> setIssueFor(e.target.value)}/>
                 </div>
-            </div>
-            <div class="flex flex-wrap -mx-3 mb-6">
                 <div class="w-full md:w-1/2 px-6 mb-6 md:mb-0">
                     <label className='block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2' for="lastname">
                         Date of Issue
@@ -52,17 +52,17 @@ function CertificateForm() {
                     </label>
                     <input className='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-slate-50 focus:border-blue-800' id="valid" type="date" placeholder='dd-mm-yyy' value={expiryDate} onChange={(e)=> setExpiryDare(e.target.value)}/>
                 </div>
-            </div>
-            <div class="flex flex-wrap -mx-3 mb-6">
-                <div class="w-full md:w-1/2 px-6 mb-6 md:mb-0">
+                <div class="w-3/4 ml-5 pl-1">
                     <label className='block uppercase tracking-wide text-gray-700 text-sm font-bold mb-2' for="lastname">
                         Email
                     </label>
                     <input className='appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-900 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-slate-50 focus:border-blue-800' id="email" type="email" placeholder='abc@xyz.com' value={email} onChange={(e)=> setEmail(e.target.value)}/>
                     <p className='text-gray-600 text-xs italic'>The certificate will be mailed to this email address</p>
                 </div>
+            <div className='w-1/3 ml-5 pl-1'>Certificate ID: {hash}</div>
             </div>
-            <div className='flex justify-start ml-3'>Certificate ID:</div>
+            <Certificate title={issuefor} name={firstName+" "+lastName} date={issueDate} hash={hash}/>
+        </div>    
         </>
     )
 }
