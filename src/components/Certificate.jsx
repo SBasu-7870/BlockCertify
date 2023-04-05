@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '../../public/vite.svg'
+import logo from '../assets/react.svg'
 import "./certificate.css"
 
 function Certificate(props) {
@@ -20,37 +20,37 @@ function Certificate(props) {
         height="600"
         id="border"
       />
-      <text x="460" y="100" text-anchor="middle" fill="black" id="bodyTitle">
+      <text x="460" y="100" textAnchor="middle" fill="black" id="bodyTitle">
         Certificate
       </text>
-      <text x="460" y="125" text-anchor="middle" fill="black" id="bodySubTitle">
+      <text x="460" y="125" textAnchor="middle" fill="black" id="bodySubTitle">
         of
       </text>
       <line x1="200" y1="260" x2="720" y2="260" id="titleUnderLine" />
-      <text x="460" y="250" text-anchor="middle" fill="black" id="title">
+      <text x="460" y="250" textAnchor="middle" fill="black" id="title">
         {title}
       </text>
       <text
         x="460"
         y="300"
-        text-anchor="middle"
+        textAnchor="middle"
         fill="black"
         id="subTitleHeader"
       >
         awarded to
       </text>
-      <text x="460" y="400" text-anchor="middle" fill="black" id="name">
+      <text x="460" y="400" textAnchor="middle" fill="black" id="name">
         {name}
       </text>
       <line x1="180" y1="410" x2="750" y2="410" id="titleUnderLine" />
-      <text x="460" y="440" text-anchor="middle" fill="black" id="bodySubTitle">
+      <text x="460" y="440" textAnchor="middle" fill="black" id="bodySubTitle">
         on
       </text>
-      <text x="460" y="500" text-anchor="middle" fill="black" id="date">
+      <text x="460" y="500" textAnchor="middle" fill="black" id="date">
         {date}
       </text>
       <line x1="370" y1="510" x2="550" y2="510" id="titleUnderLine" />
-      <text x="100" y="575" text-anchor="start" fill="black" id="hash">
+      <text x="100" y="575" textAnchor="start" fill="black" id="hash">
         ID: {hash}
       </text>
       <image
