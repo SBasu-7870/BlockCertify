@@ -17,23 +17,16 @@ const addLeaf = async (data)=> {
      console.log("document does not exist");
    }
 
-   if(hashArray.length % 2 === 0){
-     hashArray.push({hash,child:"left"});
-   }
-   else{
-     hashArray.push({hash,child:"right"});
-   }
-   
-   const hashes = hashArray.map(obj => obj.hash);
+   hashArray.push(hash);
    try {
      await setDoc(certifDataRef,{
        hash: hashArray,
        data: arrayUnion(data)
      }, {merge: true})
     
-    const merkleRoot = generateMerkleRoot(hashes);
+    generateMerkleRoot(hashArray);
     
-    await generateMerkleTree(hashes,merkleRoot);
+    await generateMerkleTree(hashArray);
     
     return hash;
    } catch (error) {

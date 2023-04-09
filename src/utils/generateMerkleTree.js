@@ -4,7 +4,7 @@ import ensureEven from "./ensureEven";
 import generateHash from "./generateHash";
 
 
-const generateMerkleTree = async (hashes,merkleRoot) =>{
+const generateMerkleTree = async (hashes) =>{
     if(!hashes || hashes.length === 0) {
       return [];
     }
@@ -33,7 +33,6 @@ const generateMerkleTree = async (hashes,merkleRoot) =>{
   
     try {
       await setDoc(merkleTreeRef,{
-        merkleRoot: merkleRoot,
         merkleTree: tree
       },{merge: true})
     } catch (error) {
