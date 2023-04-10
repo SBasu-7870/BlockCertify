@@ -1,6 +1,7 @@
 import React from "react";
 import LoginComponent from "../components/LoginComponent";
 import CertificateForm from "./CertificateForm";
+import VerifyCertificate from "./VerifyCertificate";
 
 function Landing() {
   return (
@@ -8,7 +9,8 @@ function Landing() {
     //   <LoginComponent title={"Verify"} description={"Login to verify your certificate"}/>
     //   <LoginComponent title={"Issue"} description={"Login to issue a certificate"}/>
     // </div>
-    <CertificateForm/>
+    // <CertificateForm/>
+    <VerifyCertificate/>
   );
 }
 

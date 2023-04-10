@@ -7,8 +7,8 @@ function CertificateForm() {
     const [lastName,setLastName] = useState("")
     const [org,setOrg] = useState("")
     const [issuefor,setIssueFor] = useState("")
-    const [issueDate,setIssueDate] = useState(null)
-    const [expiryDate,setExpiryDare] = useState(null);
+    const [issueDate,setIssueDate] = useState('')
+    const [expiryDate,setExpiryDare] = useState('');
     const [email,setEmail] = useState("");
     const [hash,setHash] = useState(undefined);
 
