@@ -4,11 +4,14 @@ import verify from '../utils/verifyCertificate';
 function VerifyCertificate() {
   const [certificateHash,setCertificateHash] = useState("");
   const [data,setData] = useState({});
+  const [verified,setVerified] = useState(false);
 
   const handleClick = async (event)=>{
       event.preventDefault();
       const certificateData = await verify(certificateHash);
       setData(certificateData.data);
+      setVerified(certificateData.verified);
+      console.log(certificateData);
   }
 
   return (
@@ -36,7 +39,7 @@ function VerifyCertificate() {
         <li className='text-xl my-2'>Issued For: {data.issuefor}</li>
         <li className='text-xl my-2'>Date of Issue: {data.issueDate}</li>
         <li className='text-xl my-2'>Expiry Date: {data.expiryDate}</li>
-        <li className='text-xl my-2'>Verification Status: none</li>
+        <li className='text-xl my-2'>Verification Status: {verified?"Verified":"Not verified"}</li>
       </ul>
       </div>
     </div>

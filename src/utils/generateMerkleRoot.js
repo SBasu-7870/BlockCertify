@@ -1,7 +1,7 @@
 import Web3 from "web3";
 import ContractArtifact from "../../../build/contracts/MyContract.json";
-import ensureEven from "./ensureEven";
-import generateHash from "./generateHash";
+import ensureEven from "./utilityFunctions";
+import generateHash from "./utilityFunctions";
 
 const contractAddress = import.meta.env.VITE_SOLIDITY_CONTRACT_ADDRESS;
 const web3 = new Web3("https://rpc-mumbai.maticvigil.com");
