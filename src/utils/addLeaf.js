@@ -1,7 +1,7 @@
 import { db } from "../../firebase";
 import { doc, getDoc, setDoc, arrayUnion } from "firebase/firestore";
 import generateHash from "./generateHash";
-import generateMerkleRoot from "./generateMerkleRoot";
+import { generateMerkleRoot } from "./generateMerkleRoot";
 import generateMerkleTree from "./generateMerkleTree";
 
 
@@ -24,7 +24,7 @@ const addLeaf = async (data)=> {
        data: arrayUnion(data)
      }, {merge: true})
     
-    generateMerkleRoot(hashArray);
+    const merkleRoot = generateMerkleRoot(hashArray);
     
     await generateMerkleTree(hashArray);
     

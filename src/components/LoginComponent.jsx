@@ -8,10 +8,10 @@ function LoginComponent(props) {
        <p className='text-sm bold mb-4'>{description}</p>
        <hr className='block w-2/3 border-solid border border-black justify-center'/>
        <form className='m-2 p-1'>
-         <label for="email" className='block text-sm text-gray-700 font-bold mb-2'>Email</label>
+         <label htmlFor="email" className='block text-sm text-gray-700 font-bold mb-2'>Email</label>
          <input type="email" placeholder='example@xyz.com' className='shadow appearance-none border border-gray-800 rounded w-full py-2 px-3 text-gray-500 leading-tight transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 focus:outline-none focus:shadow-outline'/>
 
-         <label for="password" className='block text-sm text-gray-700 font-bold mb-2 mt-4'>Password</label>
+         <label htmlFor="password" className='block text-sm text-gray-700 font-bold mb-2 mt-4'>Password</label>
          <input type="password" placeholder='password' className='shadow appearance-none border border-gray-800 rounded w-full py-2 px-3 text-gray-500 leading-tight transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 focus:outline-none focus:shadow-outline'/>
          <button className=' bg-neutral-900 hover:bg-neutral-800 text-white font-bold mt-5 py-2 px-4 border-b-4 border-l-2 border-gray-700 hover:border-gray-500 rounded'>
            Login

@@ -1,6 +1,5 @@
 import { db } from "../../firebase";
 import { doc, getDoc, setDoc, arrayUnion } from "firebase/firestore";
-import generateMerkleTree from './generateMerkleTree';
 import { getLeafNodeDirectionInMerkleTree } from './utilityFunctions';
 
 

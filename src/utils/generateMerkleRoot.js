@@ -1,7 +1,7 @@
 import Web3 from "web3";
 import ContractArtifact from "../../../build/contracts/MyContract.json";
-import ensureEven from "./utilityFunctions";
-import generateHash from "./utilityFunctions";
+import ensureEven from "./ensureEven";
+import generateHash from "./generateHash";
 
 const contractAddress = import.meta.env.VITE_SOLIDITY_CONTRACT_ADDRESS;
 const web3 = new Web3("https://rpc-mumbai.maticvigil.com");
@@ -42,10 +42,10 @@ const generateMerkleRoot = (hashArray) => {
         console.log(`Transaction receipt: ${receipt}`);
     });
     // web3.eth.getAccounts().then(console.log);
-    return;
+    return rootHashValue;
   }
 
   return generateMerkleRoot(combinedHashes);
 };
 
-export default generateMerkleRoot;
+export {generateMerkleRoot};

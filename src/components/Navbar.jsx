@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
@@ -7,12 +8,13 @@ function Navbar() {
        <nav className='hidden lg:block'>
           <div className='flex flex-wrap border-2 border-solid border-gray-900 rounded-full px-1 py-1 appearance-none'>
              <ul className='font-medium flex flex-row justify-between w-full transition-colors duration-500 ease-in-out'>
-               <li className='relative p-2 hover:bg-zinc-950 hover:text-white rounded-full' >Home</li>
-               <li className='relative p-2  hover:bg-zinc-950 hover:text-white rounded-full' >About</li>
+               <li className='relative p-2 hover:bg-zinc-950 hover:text-white rounded-full font-mono font-bold' >Home</li>
+               <li className='relative p-2  hover:bg-zinc-950 hover:text-white rounded-full font-mono font-bold' >How it works</li>
+               <li className='relative p-2  hover:bg-zinc-950 hover:text-white rounded-full font-mono font-bold' >About</li>
              </ul>
           </div>
        </nav>
-       <button className='bg-zinc-950 border-2 text-white rounded-full py-3 px-5 hover:rounded-2xl'>Login</button>
+       <button className='bg-zinc-950 border-2 text-white font-mono rounded-full py-3 px-5 hover:rounded-2xl'><Link to="/getStarted">Get Started</Link></button>
     </div>
   )
 }
