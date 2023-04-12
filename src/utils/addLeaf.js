@@ -24,7 +24,7 @@ const addLeaf = async (data)=> {
        data: arrayUnion(data)
      }, {merge: true})
     
-    // generateMerkleRoot(hashArray);
+    generateMerkleRoot(hashArray);
     
     await generateMerkleTree(hashArray);
     
