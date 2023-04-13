@@ -1,26 +1,29 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 
 function LoginComponent(props) {
-  const {title, description} = props;
+  const { title, description, svgr, content, path } = props;
   return (
-    <div className='flex flex-col justify-center items-center my-4 mx-auto w-1/3 h-96 max-w-lg border-solid border-2 border-black rounded-lg shadow-xl'>
-       <h1 className='block text-2xl my-2 mx-auto'>{title}</h1>
-       <p className='text-sm bold mb-4'>{description}</p>
-       <hr className='block w-2/3 border-solid border border-black justify-center'/>
-       <form className='m-2 p-1'>
-         <label htmlFor="email" className='block text-sm text-gray-700 font-bold mb-2'>Email</label>
-         <input type="email" placeholder='example@xyz.com' className='shadow appearance-none border border-gray-800 rounded w-full py-2 px-3 text-gray-500 leading-tight transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 focus:outline-none focus:shadow-outline'/>
-
-         <label htmlFor="password" className='block text-sm text-gray-700 font-bold mb-2 mt-4'>Password</label>
-         <input type="password" placeholder='password' className='shadow appearance-none border border-gray-800 rounded w-full py-2 px-3 text-gray-500 leading-tight transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 focus:outline-none focus:shadow-outline'/>
-         <button className=' bg-neutral-900 hover:bg-neutral-800 text-white font-bold mt-5 py-2 px-4 border-b-4 border-l-2 border-gray-700 hover:border-gray-500 rounded'>
-           Login
-         </button>
-         <a className='flex justify-center mt-5 mb-5 font-bold text-sm text-stone-900 hover:text-stone-800' href="#">
-          Forgot Password?
-         </a>
-       </form>
+    <>
+    <div className='flex flex-col items-center text-center my-4 pb-5 mx-auto w-1/3 h-auto max-w-lg border-solid border-2 border-b-4 border-black rounded-2xl shadow-xl transition ease-in-out duration-200 hover:scale-105'>
+      <img className='mt-4 mb-2' src={svgr} style={{ height: 50, width: 50 }} />
+      <h1 className='block text-2xl my-2 mx-3'>{title}</h1>
+      <p className='text-sm bold mb-4 mx-3'>{description}</p>
+      <hr className='block w-2/3 border-solid border border-black justify-center' />
+      <p className='text-sm bold mt-5'>
+        Once logged in, users can:
+        <br/>
+        <br/>
+        <ul className='list-inside list-disc text-justify px-2'>
+          {content.map((point) => (
+            <li className='mb-2'>{point}</li>
+          ))}
+        </ul>
+      </p>
+      <button className='mt-2 p-2 text-md lg:text-xl bg-slate-50 rounded-full border-b-2 border border-black
+      hover:border-b-4 transition ease-in-out duration-200 hover:translate-y-1 hover:scale-105'><Link to={path}>{title}</Link></button>
     </div>
+    </>
   )
 }
 
