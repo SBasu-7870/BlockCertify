@@ -1,15 +1,25 @@
-import React from "react";
+import React,{useRef} from "react";
 import Navbar from "../components/Navbar";
 import Certification from "../assets/Certification.svg"
+import { Link } from "react-router-dom";
 // import LoginComponent from "../components/LoginComponent";
 // import CertificateForm from "./CertificateForm";
 // import VerifyCertificate from "./VerifyCertificate";
 
 function Landing() {
+  const worksRef = useRef(null);
+
+
+  const handleHowClick = () =>{
+    window.scrollTo({
+      top: worksRef.current.offsetTop,
+      behavior: "smooth"
+    });
+  }
   return (
     <>
     <div className="flex flex-col justify-center items-center">
-      <Navbar/>
+      <Navbar handleHowClick={handleHowClick}/>
       <div className="flex flex-wrap flex-col mt-4 px-6 mx-6 text-center">
         <h1 className="text-7xl font-bold"><span className="text-shadow-gray">Certify, Verify and </span><br/>
         <span className="text-border-black text-shadow-black text-gray-50">authenticate</span> <span className="text-shadow-gray">with ease</span>
@@ -19,7 +29,7 @@ function Landing() {
         {/* <a href="https://storyset.com/people">People illustrations by Storyset</a> */}
       </div>
     </div>
-    <div className="flex flex-col justify-center items-center w-full bg-black text-white py-4">
+    <div ref={worksRef} className="flex flex-col justify-center items-center w-full bg-black text-white py-4">
        <h1 className="text-5xl font-mono mt-4">How it works?</h1>
        <p className="text-xl font-mono mt-10 mx-2 px-10">
          BlockCertify is a blockchain based certificate issue and verification app which aims to use the strengths of blockchain technology to authenticate certificates to remove forgery and ensure integrity.
@@ -32,7 +42,7 @@ function Landing() {
          <br/>
          The issued certificates can be downloaded and/or sent to the email of the issued individual.
          <br/><br/>
-         Click on Get Started to start your journey with BlockCertify.
+         Click on <Link to="/getStarted">Get Started</Link> to start your journey with BlockCertify.
        </p>
     </div>
     </>

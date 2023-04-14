@@ -45,22 +45,32 @@ const getMerkleRootFromProof = (merkleProof) =>{
     const hashArray = certifDocSnap.data().hash;
     const dataArray = certifDocSnap.data().data;
 
-    const index = hashArray.indexOf(certificateHash);
-
+    
     const merkleProof = await generateMerkleProof(certificateHash,hashArray);
     const rootHashFromProof = getMerkleRootFromProof(merkleProof); 
-
+    
     let rootHashFromBlockChain;
-
+    
     try {
         rootHashFromBlockChain = await contractInstance.methods.getRootHash().call();
         console.log("Root hash:", rootHashFromBlockChain);
-      } catch (error) {
+        const index = hashArray.indexOf(certificateHash);
+        
+        if(index == -1){
+            return {hash:[],data:{},verified:false}
+        }else{
+            const currDate = new Date();
+            const expDate = new Date(dataArray[index].expiryDate);
+
+            if(currDate > expDate){
+               dataArray[index].expiryDate += "(Expired)"
+            }
+        }
+    
+        return {hash:hashArray[index],data:dataArray[index],verified: rootHashFromBlockChain === rootHashFromProof};
+    } catch (error) {
         console.error(error);
     }
-    
-
-    return {hash:hashArray[index],data:dataArray[index],verified: rootHashFromBlockChain === rootHashFromProof};
 }
 
 export default verify;

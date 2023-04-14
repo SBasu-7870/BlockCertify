@@ -21,4 +21,15 @@
     .text-shadow-gray {
         text-shadow: 0 2px 0 #626161;
     }
+
+    .bg-noise {
+        background-image: url('./assets/NoiseTexture.jpg');
+        background-repeat: repeat;
+    }
+
+    .bg-texture-dark {
+        background-image: url('./assets/noise.svg');
+        background-repeat: repeat;
+        background-color: #cecfd3;
+    }
 }

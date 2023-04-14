@@ -38,6 +38,8 @@ const generateMerkleTree = async (hashes) =>{
     } catch (error) {
       console.log("Error Generating Merkle Tree",error);
     }
+
+    return tree;
   }
 
 

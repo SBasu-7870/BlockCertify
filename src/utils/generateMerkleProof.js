@@ -1,6 +1,7 @@
 import { db } from "../../firebase";
 import { doc, getDoc, setDoc, arrayUnion } from "firebase/firestore";
 import { getLeafNodeDirectionInMerkleTree } from './utilityFunctions';
+import generateMerkleTree from "./generateMerkleTree";
 
 
 const generateMerkleProof = async (hash,hashes) => {
