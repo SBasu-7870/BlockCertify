@@ -43,3 +43,37 @@
     font-size: 10px;
     font-weight: bold;
   }
+
+@media screen and (max-width:768px) {
+  svg {
+    transform: scale(0.5);
+  }
+
+  #bodyTitle {
+    font-size: 20px;
+  }
+  #bodySubTitle {
+    font-size: 20px;
+  }
+  #title {
+    font-size: 30px;
+  }
+  #name {
+    font-size: 30px;
+  }
+  #subTitleHeader {
+    font-size: 20px;
+  }
+  #date {
+    font-size: 20px;
+  }
+  #hash {
+    font-size: 8px;
+  }
+}  
+
+@media screen and (max-width: 992px) {
+  .certificate{
+    display: none;
+  }
+}

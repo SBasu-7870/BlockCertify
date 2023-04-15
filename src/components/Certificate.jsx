@@ -7,6 +7,7 @@ function Certificate(props) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
+      className='certificate'
       width="1000"
       height="700"
       id="certificate"

@@ -20,8 +20,8 @@ function LoginComponent(props) {
           ))}
         </ul>
       </p>
-      <button className='mt-2 p-2 text-md lg:text-xl bg-slate-50 rounded-full border-b-2 border border-black
-      hover:border-b-4 transition ease-in-out duration-200 hover:translate-y-1 hover:scale-105'><Link to={path}>{title}</Link></button>
+      <button className='mt-2 py-2 px-4 text-lg lg:text-xl bg-slate-50 rounded-full border-b-2 border border-black
+      hover:border-b-4 transition ease-in-out duration-200 hover:translate-y-1 hover:scale-105'><Link to={path}>Enter</Link></button>
     </div>
     </>
   )

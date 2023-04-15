@@ -1,11 +1,13 @@
 <!-- svg: first layer -->
-<svg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'>
+<svg viewBox='0 0 246 246' xmlns='http://www.w3.org/2000/svg'>
   <filter id='noiseFilter'>
     <feTurbulence 
       type='fractalNoise' 
-      baseFrequency='0.65' 
+      baseFrequency='3.38' 
       numOctaves='3' 
-      stitchTiles='stitch'/>
+      stitchTiles='stitch'
+      opacity='0.5'
+      />
   </filter>
   
   <rect width='100%' height='100%' filter='url(#noiseFilter)'/>
