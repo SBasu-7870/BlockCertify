@@ -1,15 +1,18 @@
-import React from 'react'
-import logo from '../assets/react.svg'
+import React, { forwardRef } from 'react'
+import logo from '../assets/logo.png'
+
 import "./certificate.css"
 
-function Certificate(props) {
+const Certificate = forwardRef((props,ref) => {
     const { title, name, date, hash} = props;
+
   return (
+    <div ref={ref} id="certificateDiv" className='ml-5'>
     <svg
       xmlns="http://www.w3.org/2000/svg"
       className='certificate'
-      width="1000"
-      height="700"
+      width="900"
+      height="650"
       id="certificate"
     >
       <rect
@@ -64,7 +67,8 @@ function Certificate(props) {
       />
       Sorry, your browser does not support inline SVG.
     </svg>
+    </div>
   )
-}
+});
 
 export default Certificate

@@ -1,7 +1,8 @@
-import React,{useState} from 'react'
+import React,{useState,useRef} from 'react'
 import Certificate from '../components/Certificate';
 import addLeaf from '../utils/addLeaf.js';
 import Navbar from '../components/Navbar'
+import html2canvas from 'html2canvas';
 
 function CertificateForm() {
     const [firstName,setFirstName] = useState("");
@@ -13,6 +14,9 @@ function CertificateForm() {
     const [email,setEmail] = useState("");
     const [hash,setHash] = useState(undefined);
     const [loading,setLoading] = useState(false);
+    const [download,setDownload] = useState(false);
+
+    const svgRef = useRef(null);
 
     const handleClick = async ()=> {
         setLoading(true);
@@ -21,7 +25,19 @@ function CertificateForm() {
         const newhash = await addLeaf(data);
         setLoading(false);
         setHash(newhash);
+        setDownload(true);
     }
+
+    const handleDownload = (svgRef) => {
+          const svgComponent = svgRef.current;
+          html2canvas(svgComponent,{ scrollY: -window.scrollY })
+            .then((canvas) => {
+              const link = document.createElement('a');
+              link.download = 'certificate.png';
+              link.href = canvas.toDataURL();
+              link.click();
+            });
+    }; 
 
     return (
         <>
@@ -80,9 +96,12 @@ function CertificateForm() {
               <path opacity="0.2" fill-rule="evenodd" clip-rule="evenodd" d="M12 19C15.866 19 19 15.866 19 12C19 8.13401 15.866 5 12 5C8.13401 5 5 8.13401 5 12C5 15.866 8.13401 19 12 19ZM12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="#000000" />
               <path d="M2 12C2 6.47715 6.47715 2 12 2V5C8.13401 5 5 8.13401 5 12H2Z" fill="#000000" />
             </svg>}
+            {download && <button onClick={()=> handleDownload(svgRef)} className=' w-full bg-neutral-900 hover:bg-neutral-800 text-white font-bold ml-5 mt-5 py-2 px-4 border-b-4 border-l-2 border-gray-700 hover:border-gray-500 rounded'>
+             Download
+            </button>}
             </div>
             </div>
-            <Certificate title={issuefor} name={firstName+" "+lastName} date={issueDate} hash={hash}/>
+            <Certificate title={issuefor} name={firstName+" "+lastName} date={issueDate} hash={hash} ref={svgRef}/>
         </div>    
         </>
     )
