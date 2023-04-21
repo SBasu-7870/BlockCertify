@@ -25,7 +25,7 @@ function Landing() {
         <span className="text-border-black text-shadow-black text-gray-50">authenticate</span> <span className="text-shadow-gray">with ease</span>
         </h1>
         <p className="mt-4 text-xl text-gray-700 py-2">Protect your credentials with the security of blockchain technology using BlockVerify.</p>
-        <img className="hidden md:block" src={Certification} style={{height:700, width:800}}/>
+        <img className="hidden md:block" src={Certification} alt="certificate" style={{height:700, width:800}}/>
         {/* <a href="https://storyset.com/people">People illustrations by Storyset</a> */}
       </div>
     </div>
