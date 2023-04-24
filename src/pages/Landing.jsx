@@ -2,9 +2,8 @@ import React,{useRef} from "react";
 import Navbar from "../components/Navbar";
 import Certification from "../assets/Certification.svg"
 import { Link } from "react-router-dom";
-// import LoginComponent from "../components/LoginComponent";
-// import CertificateForm from "./CertificateForm";
-// import VerifyCertificate from "./VerifyCertificate";
+import Footer from "../components/Footer";
+
 
 function Landing() {
   const worksRef = useRef(null);
@@ -45,6 +44,7 @@ function Landing() {
          Click on <Link to="/getStarted">Get Started</Link> to start your journey with BlockCertify.
        </p>
     </div>
+    <Footer/>
     </>
   );
 }
