@@ -28,7 +28,7 @@ function Landing() {
         {/* <a href="https://storyset.com/people">People illustrations by Storyset</a> */}
       </div>
     </div>
-    <div ref={worksRef} className="flex flex-col justify-center items-center w-full bg-black text-white py-4">
+    <div ref={worksRef} className="flex flex-col justify-center items-center w-full bg-black text-white py-4 border-b-2 border-t-2 border-dashed border-white">
        <h1 className="text-5xl font-mono mt-4">How it works?</h1>
        <p className="text-xl font-mono mt-10 mx-2 px-10">
          BlockCertify is a blockchain based certificate issue and verification app which aims to use the strengths of blockchain technology to authenticate certificates to remove forgery and ensure integrity.
