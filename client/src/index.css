@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .text-border-black {
+        color: #fff;
+        -webkit-text-stroke: 2px black;
+    }
+
+    .text-border-gray {
+        color: #626161;
+        -webkit-text-stroke: 2px black;
+    }
+      
+
+    .text-shadow-black {
+        text-shadow: 0 4px 0 #141414;
+    }
+
+    .text-shadow-gray {
+        text-shadow: 0 2px 0 #626161;
+    }
+
+    .bg-noise {
+        background-image: url('./assets/NoiseTexture.jpg');
+        background-repeat: repeat;
+    }
+
+    .bg-texture-dark {
+        background-image: url('./assets/noise.svg');
+        background-repeat: repeat;
+        background-color: #c9bebe;
+    }
+
+    .w-1000 {
+        width: 1000;
+    }
+
+    .h-700 {
+        height:700;
+    }
+}
