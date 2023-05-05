@@ -15,10 +15,14 @@ jobs:
           node-version: '18.15.0' # Specify the desired Node.js version
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          cd client
+          npm install
 
       - name: Build
-        run: npm run build
+        run: |
+          cd client
+          npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
